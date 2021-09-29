@@ -1,3 +1,4 @@
+import { LiveHeartRuleId } from '../interface/LiveHeart';
 import { ApiBaseProp, PureDataProp } from './BiLiBaseProp';
 
 /** 直播签到 */
@@ -168,5 +169,16 @@ export interface BagSendResDto extends ApiBaseProp {
     gift_action: string;
     gift_price: number;
     coin_type: string;
+  };
+}
+
+export interface LiveHeartEDto extends ApiBaseProp {
+  data: {
+    timestamp: number;
+    heartbeat_interval: number;
+    secret_key: string;
+    secret_rule: LiveHeartRuleId;
+    patch_status?: number;
+    reason?: string[];
   };
 }
